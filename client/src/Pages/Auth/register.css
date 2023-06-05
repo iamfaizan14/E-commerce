@@ -1,0 +1,26 @@
+/* RegistrationPage.css */
+.registration-container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  color: white;
+  background-color: rgb(89, 88, 88);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.registration-container h1 {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+
+.registration-container form {
+    font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+
+.registration-container button[type="submit"] {
+  width: 100%;
+}
+

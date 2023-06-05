@@ -1,0 +1,36 @@
+.footer {
+  background-color: #7c7b7b;
+  padding: 50px 0;
+  color: #ebdddd;
+}
+
+.footer h4 {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer p {
+  line-height: 1.5;
+}
+
+.footer-bottom {
+  background-color: #333;
+  padding: 10px 0;
+  color: #fff;
+}
+
+.footer-bottom p {
+  margin: 0;
+  text-align: center;
+}
+
+.footer-bottom p a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-bottom p a:hover {
+  color: #ccc;
+  text-decoration: none;
+}
