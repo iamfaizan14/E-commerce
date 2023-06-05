@@ -20,7 +20,7 @@ router.post("/login", loginController);
 router.get("/test", requireSignIn, isAdmin, testController);
 
 //FORGOT PASSWORD
-router.post("/forget-password", forgetPasswordController);
+router.post("/forgot-password", forgetPasswordController);
 //USELESS ROUTE NEED TO FIX
 router.get("/sendOTP/:mobileNumber", resetPassUsingOTPController);
 

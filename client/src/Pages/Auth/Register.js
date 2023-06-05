@@ -25,6 +25,7 @@ const RegistrationPage = () => {
           password,
           phone,
           address,
+          answer
         }
       );
       if (res && res.data.success) {
@@ -41,6 +42,7 @@ const RegistrationPage = () => {
     setPassword("");
     setPhone("");
     setAddress("");
+    setAnswer("")
   };
   return (
     <Layout title="Register here - e-com">
@@ -103,7 +105,7 @@ const RegistrationPage = () => {
               required
             />
           </Form.Group>
-          <Form.Group controlId="formBasicAddress">
+          <Form.Group controlId="formBasicAnswer">
             <Form.Label>What is your hobby?</Form.Label>
             <Form.Control
               onChange={(e) => setAnswer(e.target.value)}

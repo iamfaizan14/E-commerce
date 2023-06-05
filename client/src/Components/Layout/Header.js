@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AiFillShop } from "react-icons/ai";
 import "./header.css";
 import { useAuth } from "../../context/AuthProvider";
@@ -45,23 +45,49 @@ const Header = () => {
                 Category
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/register">
-                Register
-              </Link>
-            </li>
+
             {!auth.user ? (
-              <li className="nav-item">
-                <Link className="nav-link" to="/login">
-                  Login
-                </Link>
-              </li>
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/register">
+                    Register
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/login">
+                    Login
+                  </Link>
+                </li>
+              </>
             ) : (
-              <li className="nav-item">
-                <Link onClick={handleLogout} className="nav-link" to="/login">
-                  Logout
-                </Link>
-              </li>
+              <>
+                <li className="nav-item dropdown">
+                  <NavLink
+                    className="nav-link dropdown-toggle"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    {auth?.user?.name}
+                  </NavLink>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <Link to="/dashboard" className="dropdown-item">
+                        Dashboard
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        onClick={handleLogout}
+                        className="dropdown-item"
+                        to="/login"
+                      >
+                        Logout
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+              </>
             )}
 
             <li className="nav-item">
