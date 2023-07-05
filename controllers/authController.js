@@ -97,6 +97,7 @@ export const loginController = async (req, res) => {
         email: user.email,
         phone: user.phone,
         address: user.address,
+        role: user.role,
       },
       token,
     });
@@ -147,7 +148,6 @@ export const forgetPasswordController = async (req, res) => {
 
 //Reset password using otp (USELESS CONTROLLER)
 export const resetPassUsingOTPController = async (req, res) => {
-  
   try {
     const mobileNumber = req.params.mobileNumber;
     const generateOTP = () => {
@@ -156,9 +156,6 @@ export const resetPassUsingOTPController = async (req, res) => {
     const otp = generateOTP();
 
     const message = `Your OTP is: ${otp}`;
-    
-
-    
   } catch (error) {
     console.log(error);
     res.send({

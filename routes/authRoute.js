@@ -17,14 +17,16 @@ router.post("/register", registerController);
 //LOGIN || POST METHOD
 router.post("/login", loginController);
 
-router.get("/test", requireSignIn, isAdmin, testController);
+// router.get("/test", requireSignIn, isAdmin, testController);
 
 //FORGOT PASSWORD
 router.post("/forgot-password", forgetPasswordController);
 //USELESS ROUTE NEED TO FIX
 router.get("/sendOTP/:mobileNumber", resetPassUsingOTPController);
 
-//PRIVATE ROUTES HERE
+//PRIVATE USER ROUTES HERE
 router.get("/user-auth", requireSignIn, userController);
+//PRIVATE ADMIN ROUTES HERE
+router.get("/admin-auth", requireSignIn,isAdmin, userController);
 
 export default router;

@@ -14,7 +14,7 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [auth, setAuth] = useAuth();
   const navigate = useNavigate();
-  const location=useLocation()
+  const location = useLocation();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -33,7 +33,7 @@ const LoginPage = () => {
           token: res.data.token,
         });
         localStorage.setItem("auth", JSON.stringify(res.data));
-        navigate(location.state||"/");
+        navigate(location.state || "/");
       } else {
         toast.error("Invalid credentials");
       }
@@ -85,7 +85,9 @@ const LoginPage = () => {
               Forgot Password?
             </span>
             <span>
-              <Link to="/forgot-password">click here to reset your password</Link>
+              <Link to="/forgot-password">
+                click here to reset your password
+              </Link>
             </span>
           </p>
           <p className="mt-3">
